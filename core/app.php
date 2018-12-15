@@ -6,7 +6,11 @@ require_once __DIR__."/lib.php";
 
 interface iapp_event_handler
 {
-    public function on_app_create($sender);
+    public function on_app_created($app);
+    public function render_header();
+    public function render_footer();
+
+    
 }
 
 class app
@@ -38,7 +42,7 @@ class app
         $this->params = array_merge($url, $get);
         if ($handler != null) {
             $this->handler = $handler;
-            $handler->on_app_create($this);
+            $handler->on_app_created($this);
         }
     }
     public function run()
@@ -51,6 +55,7 @@ class app
             if (class_exists($controllerName)) {
 
                 $controller = new $controllerName;
+                $controller->setHandler($this->handler);
                 if (method_exists($controller, $this->action)) {
                     // controller ve metodu çağırıyoruz
                     //call_user_func_array her bir elemanı bir parametre olarak gönder
