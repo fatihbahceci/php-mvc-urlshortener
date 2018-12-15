@@ -1,6 +1,8 @@
 <?php
-require_once "./controller.php";
-require_once "./view.php";
+
+require_once __DIR__."/controller.php";
+require_once __DIR__."/view.php";
+require_once __DIR__."/lib.php";
 
 interface iapp_event_handler
 {
@@ -62,7 +64,7 @@ class app
                 exit("Class not found: $this->controller");
             }
         } else {
-            exit("Controller file nout found: {$this->controller}.php");
+            exit("Controller file not found: {$this->controller}.php");
         }
     }
 

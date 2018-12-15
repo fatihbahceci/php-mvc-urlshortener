@@ -8,7 +8,7 @@ error_reporting(E_ALL ^ E_NOTICE);
 //System
 define('_root', __DIR__); // Root
 define('_core', _root . '/core'); // Çekirdek dizini
-//Eeğer model, view, ve controller klasörleri başka yerde tutulursa
+//Eğer model, view, ve controller klasörleri başka yerde tutulursa
 // _app değişkenini ona göre ayarlamak için
 define('_app', _root);
 define('_controllers', _app . '/controllers'); // Controller dizini
@@ -20,10 +20,10 @@ define('_db_connection_string', 'mysql:host=localhost;dbname=admin_buurl;charset
 define('_db_user_name', 'admin_buurl');
 define('_db_password', 'ERFJdmtIUN');
 
-require_once _core."app.php";
+require_once _core."/app.php";
 
 $app = new app();
-
+$app->run();
 
 //TODO: app_create()
 // if (!C::isLoggedIn() && !($this->controller == "home" && $this->action == "login")) {
