@@ -34,7 +34,7 @@ if (defined('_page_title')) {
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
-    <?if (C::isLoggedIn()): ?>
+    <?//if (C::isLoggedIn()): ?>
                     <li class="nav-item">
                         <a class="nav-link" href="/hastane/index">Hastaneleri Düzenle</a>
                     </li>
@@ -42,15 +42,17 @@ if (defined('_page_title')) {
                         <a class="nav-link"  href="/home/index">Makineler</a> 
                     </li>
                     <?php 
+                    /*
                         if (C::isHastaneSelected()) {
                             echo '<li class="nav-item"><a class="nav-link" href="/home/hastanedegis">Başka Hastane Seç</a></li>';
                         }
+                        */
                     
                     ?>
                     <li class="nav-item"><a class="nav-link"  href="/rapor/ictima">İctima Al</a></li>
                     <li class="nav-item"><a class="nav-link"  href="/rapor/gunbazli">Bugün mü Dün mü?</a></li>
                     <li class="nav-item"><a class="nav-link"  href="/home/logout">Pai Pai</a></li>
-                    <?endif;?>
+                    <?//endif;?>
     </ul>
   </div>
 </nav>
