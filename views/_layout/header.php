@@ -1,6 +1,6 @@
 <?php
-$app_name = "Tembel Pardüsçüler";
-$title = "İvit... Tembeliz ^_^";
+$app_name = "ShortURL";
+$title = "Url shortening";
 if (defined('_page_title')) {
     $title = _page_title . " - " . $title;
 }
@@ -36,22 +36,8 @@ if (defined('_page_title')) {
     <ul class="navbar-nav">
     <?//if (C::isLoggedIn()): ?>
                     <li class="nav-item">
-                        <a class="nav-link" href="/hastane/index">Hastaneleri Düzenle</a>
+                        <a class="nav-link" href="/hastane/login">Giriş</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link"  href="/home/index">Makineler</a> 
-                    </li>
-                    <?php 
-                    /*
-                        if (C::isHastaneSelected()) {
-                            echo '<li class="nav-item"><a class="nav-link" href="/home/hastanedegis">Başka Hastane Seç</a></li>';
-                        }
-                        */
-                    
-                    ?>
-                    <li class="nav-item"><a class="nav-link"  href="/rapor/ictima">İctima Al</a></li>
-                    <li class="nav-item"><a class="nav-link"  href="/rapor/gunbazli">Bugün mü Dün mü?</a></li>
-                    <li class="nav-item"><a class="nav-link"  href="/home/logout">Pai Pai</a></li>
                     <?//endif;?>
     </ul>
   </div>

@@ -26,7 +26,7 @@ class handler_test implements iapp_event_handler
 {
     public function on_app_created($app)
     {
-        echo "<p> App Create </p>";
+        //echo "<p> App Create </p>";
         
     }
     public function render_header()
