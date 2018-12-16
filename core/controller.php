@@ -1,6 +1,9 @@
 <?php
 class controller
 {
+    /**
+     * @var iapp_event_handler
+     */
     private $handler = null;
     public function setHandler(iapp_event_handler $handler = null)
     {
