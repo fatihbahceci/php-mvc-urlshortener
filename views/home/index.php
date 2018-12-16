@@ -1,3 +1,4 @@
+<?$model = (object)$model;?>
 <h2>Url Kısalt (Beta Yayını)</h2>
 <div class="alert alert-info">Kısaltmak istediğiniz urlyi aşağıdaki kutucuğa yapıştırın ve "Kısalt!" düğmesine basın.</div>
 <form action="/home/index" method="post" id="sendURL">
@@ -15,9 +16,6 @@
         <span class="field-validation-valid" data-valmsg-for="ReCaptcha" data-valmsg-replace="true"></span>
     </div>
     <input type="submit" class="btn btn-primary" id="submitUleynnnn" value="Kısalt!" />
-
-
-
 </form>
 <div id="result">
 <?
