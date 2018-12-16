@@ -1,4 +1,5 @@
 <?php
+require_once _models . "/db.php";
 /*
 CREATE TABLE `surl` (
 `ShortURL` varchar(10) NOT NULL,
@@ -33,6 +34,12 @@ class surl
     {
         // return static::$urlMutex->unlock();
     }
+
+    public static function get($short) {
+      $sql = "SELECT * FROM surl where  ShortURL = ?";
+      return (new db)->fetchObject($sql,"surl",[$short]);
+    }
+
     public static function createURL(string $url)
     {
         static::checkMutex();
@@ -42,7 +49,6 @@ class surl
             $sql = 'INSERT INTO `surl` (`ShortURL`, `LongURL`, `Created`, `TotalClicks`, `LastClicked`) VALUES (?,?,?,?,?)';
             $short = (new ShortUrl)->getValue();
             $date = date("Y-m-d H:i:s");
-            require _models . "/db.php";
             $db = new db;
             $r = $db->exec($sql, [$short, $url, $date, 0, $date]);
             if ($r == null) {

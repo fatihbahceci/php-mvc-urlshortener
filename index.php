@@ -26,7 +26,11 @@ class handler_test implements iapp_event_handler
 {
     public function on_app_created($app)
     {
-        //echo "<p> App Create </p>";
+       if (!in_array($app->controller, ["home", "admin"])) {
+        $app->params = $app->controller;
+        $app->controller = "home";
+        $app->action = "get";
+       }
         
     }
     public function render_header()

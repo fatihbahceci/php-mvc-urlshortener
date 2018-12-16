@@ -29,6 +29,21 @@ class homeController extends controller
  */
     }
 
+    public function get($url)
+    {
+        //echo $url;
+        require _models . "/surl.php";
+        $r = surl::get($url);
+        // echo "<pre>".print_r($r,true)."</pre>";
+        if ($r == null) {
+            $this->redirect("/");
+        } else {
+            //TODO: Add history
+            //TODO: Inc counter
+            $this->redirect($r->LongURL);
+        }
+    }
+
     public function index()
     {
         // echo "<p>".$_SERVER['REQUEST_URI']."</p>";
@@ -50,11 +65,11 @@ class homeController extends controller
                     require _models . "/surl.php";
                     $r = surl::createURL($url);
                     //http://php.net/parse_url
-                    
+
                     if ($r["success"]) {
                         $this->render("home", "index", [
                             "success" => true,
-                            "message" => "Urlniz: <pre>" . $_SERVER['HTTP_HOST'] . "/" . $r["url"]."</pre>",
+                            "message" => "Urlniz: <pre>" . $_SERVER['HTTP_HOST'] . "/" . $r["url"] . "</pre>",
                         ]);
 
                     } else {
